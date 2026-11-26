@@ -1,0 +1,6 @@
+{
+  "name": "음성 메모장",
+  "description": "타이핑 없이 말로 기록하고 음성으로 다시 들을 수 있는 시니어용 큰 글씨 음성 메모장 앱입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

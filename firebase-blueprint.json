@@ -1,0 +1,36 @@
+{
+  "entities": {
+    "VoiceMemo": {
+      "title": "VoiceMemo",
+      "description": "A voice-transcribed memo saved by a senior user with server timestamps.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the memo owner."
+        },
+        "content": {
+          "type": "string",
+          "description": "Transcribed voice memo text (1 to 5000 characters)."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the memo was created (submitted via FieldValue.serverTimestamp())."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the memo was last updated (submitted via FieldValue.serverTimestamp())."
+        }
+      },
+      "required": ["userId", "content", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/memos/{memoId}": {
+      "schema": { "$ref": "#/entities/VoiceMemo" },
+      "description": "Private voice memos owned by the authenticated user."
+    }
+  }
+}
